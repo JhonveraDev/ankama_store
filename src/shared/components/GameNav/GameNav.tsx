@@ -1,4 +1,4 @@
-import { MerchandisingLink, GameNavItem } from "../GameNav"
+import { MerchandisingLink, GameNavItem } from "../"
 
 export const GameNav = () => {
   return (

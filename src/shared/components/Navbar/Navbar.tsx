@@ -1,4 +1,4 @@
-import { SearchBar, Logo, UserActions } from "../Navbar"
+import { SearchBar, Logo, UserActions } from "../"
 
 export const Navbar = () => {
   return (
