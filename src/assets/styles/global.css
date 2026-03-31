@@ -1,0 +1,19 @@
+/* ===== Navbar ===== */
+.navbar {
+  background-color: red;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.game-nav {
+  background-color: green;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.logo {
+  max-height: 40px;
+}

@@ -1,10 +1,11 @@
 import { Outlet } from "react-router-dom";
-import { Navbar } from "../components";
+import { Navbar, GameNav } from "../components";
 
 export function MainLayout() {
   return (
     <main className="layout">
       <Navbar />
+      <GameNav />
       <Outlet />
     </main>
   );

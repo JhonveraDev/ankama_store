@@ -1,4 +1,4 @@
-import { Routes, Route } from "react-router-dom";
+import { Routes, Route, Navigate } from "react-router-dom";
 
 import { MainLayout, AuthLayout } from "../shared";
 import { StorePage, HomePage } from "../features";
@@ -22,6 +22,9 @@ export default function AppRouter() {
           <Route path=":game/:category/:subCategory" element={<StorePage />} />
         </Route>
       </Route>
+
+      {/* 🚨 Catch all */}
+      <Route path="*" element={<Navigate to="/" replace />} />
     </Routes>
   );
 }
