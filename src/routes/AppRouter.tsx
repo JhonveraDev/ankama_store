@@ -1,7 +1,7 @@
 import { Routes, Route, Navigate } from "react-router-dom";
 
 import { MainLayout, AuthLayout } from "../shared";
-import { StorePage, HomePage } from "../features";
+import { StorePage, HomePage, StoreRedirect } from "../features";
 
 export default function AppRouter() {
   return (
@@ -18,7 +18,7 @@ export default function AppRouter() {
         <Route path="store">
           <Route index element={<Navigate to="dofus/weekly-deals" replace />} />
           <Route path=":game">
-            <Route index element={<Navigate to="weekly-deals" replace />} />
+            <Route index element={<StoreRedirect /> } />
             <Route path=":category" element={<StorePage />} />
           </Route>
         </Route>
