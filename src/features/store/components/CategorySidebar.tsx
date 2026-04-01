@@ -9,7 +9,7 @@ export function CategorySidebar() {
       {categories.map(cat => (
         <NavLink
           key={cat.path}
-          to={`/${basePath}/${cat.path}`}
+          to={`/store/${basePath}/${cat.path}`}
           className={({ isActive }) => isActive ? "active" : ""}
         >
           {cat.name}

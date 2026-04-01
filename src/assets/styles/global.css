@@ -25,3 +25,7 @@
 .hero-slider {
   background-color: greenyellow;
 }
+
+.grid {
+  display: flex;
+}
