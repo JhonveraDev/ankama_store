@@ -1,4 +1,7 @@
-import { HeroSlider, CategorySidebar, ProductGrid, StoreProvider } from "../";
+import { StoreProvider } from "../context/StoreProvider";
+import { HeroSlider } from "../components/HeroSlider";
+import { CategorySidebar } from "../components/CategorySidebar";
+import { ProductGrid } from "../components/ProductGrid";
 
 export const StorePage = () => {
   return (
