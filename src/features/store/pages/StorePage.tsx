@@ -1,5 +1,12 @@
+import { HeroSlider, CategorySidebar, ProductGrid } from "../"
+
 export const StorePage = () => {
   return (
-    <div>StorePage</div>
+    <div className="Store-page">
+      STORE
+      <HeroSlider />
+      <CategorySidebar />
+      <ProductGrid />
+    </div>
   )
 }

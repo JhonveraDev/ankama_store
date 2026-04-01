@@ -1,5 +1,10 @@
+import { HeroSlider } from "../../store"
+
 export const HomePage = () => {
   return (
-    <div>HomePage</div>
+    <div>
+      HOME
+      <HeroSlider />
+    </div>
   )
 }
