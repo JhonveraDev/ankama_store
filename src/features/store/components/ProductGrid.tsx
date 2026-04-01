@@ -1,30 +1,40 @@
-import { useParams } from "react-router-dom";
+import { useParams, useSearchParams } from "react-router-dom";
 import { useStore } from "../context";
 
 export const ProductGrid = () => {
   const { category } = useParams();
-  const store = useStore();
+  const [searchParams] = useSearchParams();
 
-  console.log("CATEGORY PARAM:", category);
-  console.log("CATEGORIES:", store.categories);
+  const search = searchParams.get("search");
+  const store = useStore();
 
   const currentCategory = store.categories.find(
     c => c.path === category
   );
 
-  console.log("FOUND CATEGORY:", currentCategory);
-
   if (!currentCategory) return <p>No products</p>;
+
+  let products = currentCategory.products;
+
+  if (search) {
+    products = products.filter(product =>
+      product.name.toLowerCase().includes(search.toLowerCase())
+    );
+  }
 
   return (
     <div className="grid">
-      {currentCategory.products.map(product => (
-        <div key={product.id}>
-          <img src={product.image} alt={product.name} />
-          <h3>{product.name}</h3>
-          <p>${product.price}</p>
-        </div>
-      ))}
+      {products.length === 0 ? (
+        <p>No results found</p>
+      ) : (
+        products.map(product => (
+          <div key={product.id}>
+            <img src={product.image} alt={product.name} />
+            <h3>{product.name}</h3>
+            <p>${product.price}</p>
+          </div>
+        ))
+      )}
     </div>
   );
 };
