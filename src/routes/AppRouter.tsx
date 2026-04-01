@@ -6,20 +6,21 @@ import { StorePage, HomePage } from "../features";
 export default function AppRouter() {
   return (
     <Routes>
-      {/* 🔓 Public routes (without navbar) */}
+      {/* 🔓 Rutas de auth (sin navbar) */}
       <Route path="/auth" element={<AuthLayout />}>
         {/* <Route path="login" element={<LoginPage />} />
         <Route path="register" element={<RegisterPage />} /> */}
       </Route>
 
-      {/* 🌐 Normal routes (with navbar) */}
+      {/* 🌐 Rutas normales (con navbar) */}
       <Route path="/" element={<MainLayout />}>
         <Route index element={<HomePage />} />
         <Route path="store">
-          <Route index element={<StorePage />} />
-          <Route path=":game" element={<StorePage />} />
-          <Route path=":game/:category" element={<StorePage />} />
-          <Route path=":game/:category/:subCategory" element={<StorePage />} />
+          <Route index element={<Navigate to="dofus/weekly-deals" replace />} />
+          <Route path=":game">
+            <Route index element={<Navigate to="weekly-deals" replace />} />
+            <Route path=":category" element={<StorePage />} />
+          </Route>
         </Route>
       </Route>
 

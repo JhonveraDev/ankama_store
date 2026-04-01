@@ -1,12 +1,15 @@
-import { HeroSlider, CategorySidebar, ProductGrid } from "../"
+import { HeroSlider, CategorySidebar, ProductGrid, StoreProvider } from "../";
 
 export const StorePage = () => {
   return (
-    <div className="Store-page">
-      STORE
-      <HeroSlider />
-      <CategorySidebar />
-      <ProductGrid />
-    </div>
-  )
-}
+    <StoreProvider>
+      <div className="store-page">
+        <HeroSlider />
+        <div className="store-layout">
+          <CategorySidebar />
+          <ProductGrid />
+        </div>
+      </div>
+    </StoreProvider>
+  );
+};

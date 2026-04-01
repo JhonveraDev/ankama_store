@@ -29,3 +29,4 @@ export interface Store {
 }
 
 export type StoreData = Store[];
+export type StorePageData = Store;
