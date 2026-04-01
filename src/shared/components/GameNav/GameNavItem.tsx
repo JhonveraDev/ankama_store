@@ -1,10 +1,19 @@
+import { NavLink } from "react-router-dom";
+import { storeData } from "../../../shared";
+
 export const GameNavItem = () => {
   return (
     <ul className="">
-      <li>Dofus</li>
-      <li>Dofus Retro</li>
-      <li>Wakfu</li>
-      <li>Waven</li>
+      {storeData.map((store) => (
+        <li key={store.basePath}>
+          <NavLink
+            to={`/store/${store.basePath}`}
+            className={({ isActive }) => isActive ? "active" : ""}
+          >
+            {store.game}
+          </NavLink>
+        </li>
+      ))}
     </ul>
-  )
-}
+  );
+};
