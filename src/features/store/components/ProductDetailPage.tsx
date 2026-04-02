@@ -2,12 +2,12 @@ import { useParams, useNavigate } from "react-router-dom";
 import { useCurrentGame } from "../";
 
 export const ProductDetailPage = () => {
-  const { category, productId } = useParams();
+  const { category, slug } = useParams();
   const navigate = useNavigate();
   const currentGame = useCurrentGame();
 
   const currentCategory = currentGame?.categories.find(c => c.path === category);
-  const product = currentCategory?.products.find(p => p.id === Number(productId));
+  const product = currentCategory?.products.find(p => p.slug === slug);
 
   if (!product) return <p>Product not found</p>;
 

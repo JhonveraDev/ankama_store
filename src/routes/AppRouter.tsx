@@ -20,7 +20,7 @@ export default function AppRouter() {
           <Route path=":game">
             <Route index element={<StoreRedirect />} />
             <Route path=":category" element={<StorePage />} />
-            <Route path=":category/:productId" element={<ProductDetailPage />} />
+            <Route path=":category/:slug" element={<ProductDetailPage />} />
           </Route>
         </Route>
       </Route>

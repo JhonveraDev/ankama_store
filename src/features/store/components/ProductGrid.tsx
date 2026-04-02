@@ -27,7 +27,7 @@ export const ProductGrid = () => {
       ) : (
         products.map(product => (
           <Link
-            to={`/store/${game}/${category}/${product.id}`}
+            to={`/store/${game}/${category}/${product.slug}`}
             key={product.id}
           >
             <div>

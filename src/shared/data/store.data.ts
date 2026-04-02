@@ -16,6 +16,7 @@ export const storeData: StoreData = [
         products: [
           {
             id: 1,
+            slug: "haven-bag-showroom",
             name: "Haven Bag Showroom",
             image: "/images/haven-bag.jpg",
             price: 5640,
@@ -24,6 +25,7 @@ export const storeData: StoreData = [
           },
           {
             id: 2,
+            slug: "golden-pack",
             name: "Golden Pack",
             image: "/images/golden-pack.jpg",
             price: 2000,
@@ -41,12 +43,14 @@ export const storeData: StoreData = [
         products: [
           {
             id: 3,
+            slug: "emerald-dragoturkey",
             name: "Emerald Dragoturkey",
             image: "/images/dofus-mount1.jpg",
             price: 3200,
           },
           {
             id: 4,
+            slug: "crimson-dragoturkey",
             name: "Crimson Dragoturkey",
             image: "/images/dofus-mount2.jpg",
             price: 4500,
@@ -66,12 +70,14 @@ export const storeData: StoreData = [
         products: [
           {
             id: 5,
+            slug: "knight-costume",
             name: "Knight Costume",
             image: "/images/dofus-costume.jpg",
             price: 2100,
           },
           {
             id: 6,
+            slug: "royal-emote-pack",
             name: "Royal Emote Pack",
             image: "/images/dofus-emotes.jpg",
             price: 1200,
@@ -97,6 +103,7 @@ export const storeData: StoreData = [
         products: [
           {
             id: 1,
+            slug: "starter-booster-pack",
             name: "Starter Booster Pack",
             image: "/images/wakfu-booster.jpg",
             price: 3500,
@@ -105,6 +112,7 @@ export const storeData: StoreData = [
           },
           {
             id: 2,
+            slug: "mount-skin-celestial-dragoturkey",
             name: "Mount Skin: Celestial Dragoturkey",
             image: "/images/wakfu-mount.jpg",
             price: 1800,
@@ -122,12 +130,14 @@ export const storeData: StoreData = [
         products: [
           {
             id: 3,
+            slug: "baby-gobball",
             name: "Baby Gobball",
             image: "/images/wakfu-pet1.jpg",
             price: 900,
           },
           {
             id: 4,
+            slug: "mini-tofu",
             name: "Mini Tofu",
             image: "/images/wakfu-pet2.jpg",
             price: 1100,
@@ -147,12 +157,14 @@ export const storeData: StoreData = [
         products: [
           {
             id: 5,
+            slug: "shadow-assassin-outfit",
             name: "Shadow Assassin Outfit",
             image: "/images/wakfu-costume1.jpg",
             price: 2500,
           },
           {
             id: 6,
+            slug: "celestial-robe",
             name: "Celestial Robe",
             image: "/images/wakfu-costume2.jpg",
             price: 3000,
