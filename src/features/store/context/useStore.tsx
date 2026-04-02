@@ -1,8 +1,8 @@
 import { useContext } from "react";
-import type { Store } from "../../../shared";
+import type { StoreData } from "../../../shared";
 import { StoreContext } from "./StoreContext";
 
-export function useStore(): Store {
+export function useStore(): StoreData {
   const context = useContext(StoreContext);
 
   if (!context) {

@@ -1,16 +1,14 @@
 import { useParams, useSearchParams, Link } from "react-router-dom";
-import { useStore } from "../context";
+import { useCurrentGame } from "../";
 
 export const ProductGrid = () => {
-  const { category } = useParams();
+  const { game, category } = useParams();
   const [searchParams] = useSearchParams();
 
   const search = searchParams.get("search");
-  const store = useStore();
+  const currentGame = useCurrentGame();
 
-  const currentCategory = store.categories.find(
-    c => c.path === category
-  );
+  const currentCategory = currentGame?.categories.find(c => c.path === category);
 
   if (!currentCategory) return <p>No products</p>;
 
@@ -29,7 +27,7 @@ export const ProductGrid = () => {
       ) : (
         products.map(product => (
           <Link
-            to={`/store/${store.basePath}/${category}/${product.id}`}
+            to={`/store/${game}/${category}/${product.id}`}
             key={product.id}
           >
             <div>

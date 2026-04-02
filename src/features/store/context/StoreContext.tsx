@@ -1,4 +1,4 @@
 import { createContext } from "react";
-import type { Store } from "../../../shared";
+import type { StoreData } from "../../../shared";
 
-export const StoreContext = createContext<Store | null>(null);
+export const StoreContext = createContext<StoreData | null>(null);

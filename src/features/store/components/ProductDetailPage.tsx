@@ -1,37 +1,35 @@
-import { useParams } from "react-router-dom";
-import { useStore } from "../context";
+import { useParams, useNavigate } from "react-router-dom";
+import { useCurrentGame } from "../";
 
 export const ProductDetailPage = () => {
   const { category, productId } = useParams();
-  const store = useStore();
+  const navigate = useNavigate();
+  const currentGame = useCurrentGame();
 
-  const currentCategory = store.categories.find(
-    c => c.path === category
-  );
-
-  const product = currentCategory?.products.find(
-    p => p.id === Number(productId)
-  );
+  const currentCategory = currentGame?.categories.find(c => c.path === category);
+  const product = currentCategory?.products.find(p => p.id === Number(productId));
 
   if (!product) return <p>Product not found</p>;
 
   return (
-    <div>
+    <div className="product-detail">
+      <button onClick={() => navigate(-1)}>← Back</button>
+
       <img src={product.image} alt={product.name} />
 
-      <h1>{product.name}</h1>
+      <div>
+        <h1>{product.name}</h1>
 
-      <p>Price: ${product.price}</p>
+        {product.originalPrice && (
+          <p className="old-price">${product.originalPrice}</p>
+        )}
 
-      {product.originalPrice && (
-        <p style={{ textDecoration: "line-through" }}>
-          ${product.originalPrice}
-        </p>
-      )}
+        <p className="price">${product.price}</p>
 
-      {product.discount && (
-        <p>Discount: {product.discount}%</p>
-      )}
+        {product.discount && (
+          <p className="discount">-{product.discount}%</p>
+        )}
+      </div>
     </div>
   );
 };
