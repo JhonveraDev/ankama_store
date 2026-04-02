@@ -1,5 +1,5 @@
 import { useParams } from "react-router-dom";
-import { useStore } from "../";
+import { useStore } from "..";
 
 export function useCurrentGame() {
   const { game } = useParams();

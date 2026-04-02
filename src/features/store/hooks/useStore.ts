@@ -1,6 +1,6 @@
 import { useContext } from "react";
 import type { StoreData } from "../../../shared";
-import { StoreContext } from "../";
+import { StoreContext } from "..";
 
 export function useStore(): StoreData {
   const context = useContext(StoreContext);
