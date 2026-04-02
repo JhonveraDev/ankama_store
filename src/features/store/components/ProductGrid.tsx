@@ -1,5 +1,6 @@
 import { useParams, useSearchParams, Link } from "react-router-dom";
 import { useCurrentGame } from "../";
+import { searchProducts } from "../../../features";
 
 export const ProductGrid = () => {
   const { game, category } = useParams();
@@ -15,9 +16,9 @@ export const ProductGrid = () => {
   let products = currentCategory.products;
 
   if (search) {
-    products = products.filter(product =>
-      product.name.toLowerCase().includes(search.toLowerCase())
-    );
+    // 👇 reemplaza el includes por Fuse
+    const fuzzyResults = searchProducts(search).map(r => r.slug);
+    products = products.filter(p => fuzzyResults.includes(p.slug));
   }
 
   return (
