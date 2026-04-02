@@ -1,5 +1,5 @@
 import { Outlet } from "react-router-dom";
-import { Navbar, GameNav } from "../components";
+import { Navbar, GameNav } from "../";
 
 export function MainLayout() {
   return (

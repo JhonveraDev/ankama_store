@@ -1,5 +1,5 @@
 import { storeData } from "../../../shared";
-import { StoreContext } from "./StoreContext";
+import { StoreContext } from "../";
 
 export function StoreProvider({ children }: { children: React.ReactNode }) {
   return (

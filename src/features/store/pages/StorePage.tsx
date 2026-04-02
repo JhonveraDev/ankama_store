@@ -1,8 +1,5 @@
 import { useParams } from "react-router-dom";
-import { StoreProvider } from "../context/StoreProvider";
-import { HeroSlider } from "../components/HeroSlider";
-import { CategorySidebar } from "../components/CategorySidebar";
-import { ProductGrid } from "../components/ProductGrid";
+import { StoreProvider, HeroSlider, CategorySidebar, ProductGrid } from "../";
 
 export const StorePage = () => {
   const { game } = useParams();
