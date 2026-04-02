@@ -1,4 +1,4 @@
-import { useParams, useSearchParams } from "react-router-dom";
+import { useParams, useSearchParams, Link } from "react-router-dom";
 import { useStore } from "../context";
 
 export const ProductGrid = () => {
@@ -28,11 +28,16 @@ export const ProductGrid = () => {
         <p>No results found</p>
       ) : (
         products.map(product => (
-          <div key={product.id}>
-            <img src={product.image} alt={product.name} />
-            <h3>{product.name}</h3>
-            <p>${product.price}</p>
-          </div>
+          <Link
+            to={`/store/${store.basePath}/${category}/${product.id}`}
+            key={product.id}
+          >
+            <div>
+              <img src={product.image} alt={product.name} />
+              <h3>{product.name}</h3>
+              <p>${product.price}</p>
+            </div>
+          </Link>
         ))
       )}
     </div>

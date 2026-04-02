@@ -3,6 +3,7 @@ import { BrowserRouter } from 'react-router-dom';
 import App from './App.tsx';
 
 import { StoreProvider } from '../features';
+
 import "../assets/styles/global.css";
 import "../assets/styles/reset.css";
 
