@@ -16,7 +16,6 @@ export const ProductGrid = () => {
   let products = currentCategory.products;
 
   if (search) {
-    // 👇 reemplaza el includes por Fuse
     const fuzzyResults = searchProducts(search).map(r => r.slug);
     products = products.filter(p => fuzzyResults.includes(p.slug));
   }
