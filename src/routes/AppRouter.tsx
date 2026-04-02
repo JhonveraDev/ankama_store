@@ -1,6 +1,6 @@
 import { Routes, Route, Navigate } from "react-router-dom";
 
-import { MainLayout, AuthLayout } from "../shared";
+import { MainLayout, AuthLayout, NotFoundPage } from "../shared";
 import { StorePage, HomePage, StoreRedirect, ProductDetailPage, StoreLayoutPage } from "../features";
 
 export default function AppRouter() {
@@ -8,6 +8,7 @@ export default function AppRouter() {
     <Routes>
       {/* 🔓 Rutas de auth (sin navbar) */}
       <Route path="/auth" element={<AuthLayout />}>
+
       </Route>
 
       {/* 🌐 Rutas normales (con navbar) */}
@@ -23,10 +24,8 @@ export default function AppRouter() {
             </Route>
           </Route>
         </Route>
+        <Route path="*" element={<NotFoundPage />} />
       </Route>
-
-      {/* 🚨 Catch all */}
-      <Route path="*" element={<Navigate to="/" replace />} />
     </Routes>
   );
 }

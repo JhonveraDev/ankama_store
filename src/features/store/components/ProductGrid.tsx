@@ -5,10 +5,8 @@ import { searchProducts } from "../../../features";
 export const ProductGrid = () => {
   const { game, category } = useParams();
   const [searchParams] = useSearchParams();
-
-  const search = searchParams.get("search");
   const currentGame = useCurrentGame();
-
+  const search = searchParams.get("search");
   const currentCategory = currentGame?.categories.find(c => c.path === category);
 
   if (!currentCategory) return <p>No products</p>;

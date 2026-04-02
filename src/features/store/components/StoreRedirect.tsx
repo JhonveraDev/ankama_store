@@ -6,7 +6,7 @@ export const StoreRedirect = () => {
 
   const store = storeData.find(s => s.basePath === game);
 
-  if (!store) return <Navigate to="/" replace />;
+  if (!store) return <Navigate to="/404" replace />;
 
   const firstCategory = store.categories[0];
 

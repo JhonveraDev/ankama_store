@@ -4,6 +4,7 @@ export const HomePage = () => {
   return (
     <div>
       <HomeSlider />
+      HOME PAGE
     </div>
   );
 };
