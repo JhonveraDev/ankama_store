@@ -1,5 +1,5 @@
 import { Outlet } from "react-router-dom";
-import { Navbar, GameNav } from "../";
+import { Navbar, GameNav, Footer } from "../";
 
 export function MainLayout() {
   return (
@@ -7,6 +7,7 @@ export function MainLayout() {
       <Navbar />
       <GameNav />
       <Outlet />
+      <Footer />
     </main>
   );
 }

@@ -29,3 +29,7 @@
 .grid {
   display: flex;
 }
+
+.footer {
+  background-color: rebeccapurple;
+}
