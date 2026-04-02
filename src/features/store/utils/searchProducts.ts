@@ -1,23 +1,22 @@
+import Fuse from "fuse.js";
 import { storeData } from "../../../shared";
 
+const allProducts = storeData.flatMap(store =>
+  store.categories.flatMap(category =>
+    category.products.map(product => ({
+      ...product,
+      game: store.basePath,
+      category: category.path,
+    }))
+  )
+);
+
+const fuse = new Fuse(allProducts, {
+  keys: ["name"],
+  threshold: 0.4,
+});
+
 export const searchProducts = (query: string) => {
-  const results: any[] = [];
-
-  storeData.forEach(store => {
-    store.categories.forEach(category => {
-      category.products.forEach(product => {
-        if (
-          product.name.toLowerCase().includes(query.toLowerCase())
-        ) {
-          results.push({
-            ...product,
-            game: store.basePath,
-            category: category.path,
-          });
-        }
-      });
-    });
-  });
-
-  return results;
+  if (!query.trim()) return [];
+  return fuse.search(query).map(result => result.item);
 };
