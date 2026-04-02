@@ -1,15 +1,13 @@
 import { Routes, Route, Navigate } from "react-router-dom";
 
 import { MainLayout, AuthLayout } from "../shared";
-import { StorePage, HomePage, StoreRedirect, ProductDetailPage } from "../features";
+import { StorePage, HomePage, StoreRedirect, ProductDetailPage, StoreLayoutPage } from "../features";
 
 export default function AppRouter() {
   return (
     <Routes>
       {/* 🔓 Rutas de auth (sin navbar) */}
       <Route path="/auth" element={<AuthLayout />}>
-        {/* <Route path="login" element={<LoginPage />} />
-        <Route path="register" element={<RegisterPage />} /> */}
       </Route>
 
       {/* 🌐 Rutas normales (con navbar) */}
@@ -20,7 +18,9 @@ export default function AppRouter() {
           <Route path=":game">
             <Route index element={<StoreRedirect />} />
             <Route path=":category" element={<StorePage />} />
-            <Route path=":category/:slug" element={<ProductDetailPage />} />
+            <Route path=":category/:slug" element={<StoreLayoutPage />}>
+              <Route index element={<ProductDetailPage />} />
+            </Route>
           </Route>
         </Route>
       </Route>
