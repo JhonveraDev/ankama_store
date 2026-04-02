@@ -1,5 +1,5 @@
 import { useParams, Navigate } from "react-router-dom";
-import { StoreProvider, HeroSlider, CategorySidebar, ProductGrid } from "../";
+import { StoreProvider, HeroSlider, CategorySidebar, ProductGrid, RecentProducts } from "../";
 import { storeData } from "../../../shared";
 
 export const StorePage = () => {
@@ -18,6 +18,7 @@ export const StorePage = () => {
           <CategorySidebar />
           <ProductGrid />
         </div>
+        <RecentProducts />
       </div>
     </StoreProvider>
   );
