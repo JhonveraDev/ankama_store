@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { searchProducts } from "../../../features";
+import search from "../../../assets/images/global/search.svg";
 
 export const SearchBar = () => {
   const [query, setQuery] = useState("");
@@ -18,13 +19,17 @@ export const SearchBar = () => {
   };
 
   return (
-    <form className="searchbar" onSubmit={handleSearch}>
+    <form className="searchbar navbar__center" onSubmit={handleSearch}>
       <input
         type="text"
-        placeholder="Search products..."
+        placeholder="Search"
         value={query}
         onChange={(e) => setQuery(e.target.value)}
+        className="searchbar__input"
       />
+      <button type="submit" className="searchbar__icon">
+        <img src={search} alt="Searchbar Icon" />
+      </button>
     </form>
   );
 };

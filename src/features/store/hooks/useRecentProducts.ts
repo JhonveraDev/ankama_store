@@ -1,7 +1,7 @@
 import { storeData } from "../../../shared";
 
 const STORAGE_KEY = "recent_products";
-const MAX_RECENT = 6;
+const MAX_RECENT = 5;
 
 export type RecentProduct = {
   slug: string;

@@ -1,10 +1,83 @@
+/* ===== Main Layout ===== */
+.main-layout {
+  max-width: 1920px;
+  margin: 0 auto;
+}
+
 /* ===== Navbar ===== */
 .navbar {
-  background-color: red;
+  background-color: #e7e7e7;
   display: flex;
-  justify-content: space-between;
   align-items: center;
+  position: relative;
+  padding: 15px 12px;
 }
+
+.logo {
+  max-height: 40px;
+  opacity: .7;
+}
+
+.navbar__left {
+  margin-right: auto;
+}
+
+.navbar__center {
+  left: 50%;
+  transform: translateX(-50%);
+  width: 440px;
+  position: absolute;
+}
+
+.navbar__right {
+  margin-left: auto;
+}
+
+.searchbar__input {
+  width: 100%;
+  min-height: 50px;
+  border-radius: 32px;
+  overflow: hidden;
+  border: none;
+  outline: none;
+  padding-left: 16px;
+  box-sizing: border-box;
+  position: relative;
+}
+
+.searchbar__input:focus {
+  outline: none;
+}
+
+.searchbar__icon {
+  padding-right: 10px;
+  width: 34px;
+  height: 26px;
+  position: absolute;
+  right: 0;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 .game-nav {
   background-color: green;
@@ -12,10 +85,6 @@
   flex-direction: row;
   justify-content: space-between;
   align-items: center;
-}
-
-.logo {
-  max-height: 40px;
 }
 
 .Store-page {

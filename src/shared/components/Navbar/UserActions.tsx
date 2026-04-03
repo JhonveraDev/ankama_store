@@ -1,5 +1,5 @@
 export const UserActions = () => {
   return (
-    <div>UserActions</div>
+    <div className="navbar__right">UserActions</div>
   )
 }

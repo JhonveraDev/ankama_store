@@ -40,8 +40,6 @@ html, body {
   scrollbar-width: none;
 }
 
-
-
 /* Remove list styles */
 ul,
 ol {
@@ -73,7 +71,7 @@ select {
 }
 
 * ::selection {
-  background-color: var(--color-neutral-600);
+  background-color: #03dde0;
 }
 
 /* Buttons */
