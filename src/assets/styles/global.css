@@ -10,7 +10,7 @@
   display: flex;
   align-items: center;
   position: relative;
-  padding: 15px 12px;
+  padding: 12px 25px 12px 12px;
 }
 
 .logo {
@@ -31,6 +31,12 @@
 
 .navbar__right {
   margin-left: auto;
+  background-color: red;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: row;
+  gap: 15px;
 }
 
 .searchbar__input {
@@ -58,6 +64,31 @@
   top: 50%;
   transform: translateY(-50%);
 }
+
+.cart {
+  background: #fff;
+  border: 1px solid #272624;
+  border-radius: 50%;
+  cursor: pointer;
+  transition: background-color 0.25s ease;
+}
+
+.cart:hover {
+  background-color: #272624;
+}
+
+.cart img {
+  height: 44px;
+  width: 46px;
+  padding: 9px 7px;
+}
+
+.cart img:hover {
+  filter: brightness(0) invert(1);
+  transition: filter 0.25s ease;
+}
+
+
 
 
 

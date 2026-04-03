@@ -35,7 +35,8 @@ body {
   font-family: "Roboto", sans-serif;
 }
 
-html, body {
+html,
+body {
   overflow: hidden;
   scrollbar-width: none;
 }
