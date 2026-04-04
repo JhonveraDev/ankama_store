@@ -3,7 +3,7 @@ import logo from "../../../assets/images/global/ankama_store_logo.png";
 
 export const Logo = () => {
   return (
-    <Link to="/" aria-label="Go to homepage" className="navbar__left">
+    <Link to="/" aria-label="Go to homepage" className="">
       <img src={logo} className="logo" alt="Ankama Store logo" />
     </Link>
   )

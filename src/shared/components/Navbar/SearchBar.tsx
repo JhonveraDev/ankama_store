@@ -19,7 +19,7 @@ export const SearchBar = () => {
   };
 
   return (
-    <form className="searchbar navbar__center" onSubmit={handleSearch}>
+    <form className="searchbar" onSubmit={handleSearch}>
       <input
         type="text"
         placeholder="Search"
