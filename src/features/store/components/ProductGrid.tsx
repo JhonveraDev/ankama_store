@@ -19,7 +19,7 @@ export const ProductGrid = () => {
   }
 
   return (
-    <div className="grid">
+    <div className="product-grid">
       {products.length === 0 ? (
         <p>No results found</p>
       ) : (
