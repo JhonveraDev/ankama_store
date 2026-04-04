@@ -11,7 +11,7 @@
   align-items: center;
   justify-content: space-between;
   position: relative;
-  padding: 10px 25px 10px 12px;
+  padding: 10px 20px 10px 12px;
 }
 
 .logo {
@@ -143,41 +143,57 @@
   border-left: 3px solid #c1c1c1;
 }
 
-.language-switcher__actions img{
+.language-switcher__actions img {
   border-radius: 50%;
   width: 32px;
   height: 32px;
   cursor: pointer;
 }
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+/* ===== Game Navbar ===== */
 .game-nav {
-  background-color: green;
+  align-items: center;
+  background: linear-gradient(90deg, #ebebeb 0, hsla(0, 0%, 100%, 0)), url(../images/categories/game_navbar_bg.png);
+  background-position: 100% 0;
+  background-repeat: no-repeat;
   display: flex;
-  flex-direction: row;
+  height: 68px;
+  padding: 12px;
+  position: relative;
   justify-content: space-between;
   align-items: center;
 }
+
+.game-nav-list {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 20px;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 .Store-page {
   background-color: blueviolet;
