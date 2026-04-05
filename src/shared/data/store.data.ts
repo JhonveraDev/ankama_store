@@ -1,9 +1,13 @@
 import type { StoreData } from "../types";
 
+import dofus from "../../assets/images/categories/nav_item_dofus.png";
+import wakfu from "../../assets/images/categories/nav_item_wakfu.png";
+
 export const storeData: StoreData = [
   {
     game: "DOFUS",
     basePath: "dofus",
+    categorieImage: dofus,
     categories: [
       {
         name: "Weekly Deals",
@@ -91,6 +95,7 @@ export const storeData: StoreData = [
   {
     game: "WAKFU",
     basePath: "wakfu",
+    categorieImage: wakfu,
     categories: [
       {
         name: "Featured Offers",

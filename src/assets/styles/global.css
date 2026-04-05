@@ -168,11 +168,35 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  gap: 20px;
+  gap: 5px;
+  margin-left: 4px;
 }
 
+.game-nav-link {
+  background-color: #03dde0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: row;
+  padding: 6px 12px 6px 0;
+  border-radius: 10px;
+}
 
+.game-nav-link:hover {
+  background-color: #fff;
+}
 
+.game-nav__icon {
+  height: 40px;
+  margin-right: 6px;
+  width: 40px;
+}
+
+.game-nav__arrow {
+  height: 7px;
+  width: 10px;
+  margin-left: 8px;
+}
 
 
 

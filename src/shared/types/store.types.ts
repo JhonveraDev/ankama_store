@@ -26,6 +26,7 @@ export interface Category {
 export interface Store {
   game: GameName;
   basePath: string;
+  categorieImage: string;
   categories: Category[];
 }
 
