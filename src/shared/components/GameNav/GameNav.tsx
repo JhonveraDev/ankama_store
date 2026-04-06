@@ -1,10 +1,10 @@
-import { MerchandisingLink, GameNavItem } from "../"
+import { GithubButton, GameNavItem } from "../"
 
 export const GameNav = () => {
   return (
     <div className="game-nav">
       <GameNavItem />
-      <MerchandisingLink />
+      <GithubButton />
     </div>
   )
 }

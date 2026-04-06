@@ -1,3 +1,3 @@
 export * from "./GameNav";
-export * from "./MerchandisingLink";
+export * from "./GithubButton";
 export * from "./GameNavItem";

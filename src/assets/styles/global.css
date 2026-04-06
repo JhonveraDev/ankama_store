@@ -255,6 +255,41 @@
   position: relative;
 }
 
+.github-button {
+  padding: .375rem 2rem .375rem 2rem;
+  background-color: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: row;
+  font-size: .95rem;
+  border-radius: 35px;
+  line-height: 2rem;
+  color: #272624;
+  transition: background-color 0.3s ease;
+}
+
+.github-button:hover {
+  background-color: #272624;
+  color: #fff;
+}
+
+.github-button .external-icon {
+  margin-left: 10px;
+  margin-bottom: 3px;
+  color: #272624;
+  transition: color 0.3s ease;
+}
+
+.github-button:hover .external-icon {
+  color: #fff;
+}
+
+.github-button:hover span {
+  text-decoration: underline;
+}
+
+
 /* ===== Hero Slider ===== */
 .hero-slider {
   position: relative;
