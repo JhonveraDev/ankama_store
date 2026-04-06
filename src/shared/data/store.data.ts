@@ -24,8 +24,8 @@ export const storeData: StoreData = [
         name: "Weekly Deals",
         path: "weekly-deals",
         banners: [
-          { mainBanner: weekly, thumbBanner: weeklys },
-          { mainBanner: prueba13, thumbBanner: weeklys },
+          { mainBanner: weekly, thumbBanner: weeklys, link: "/store/dofus/weekly-deals"},
+          { mainBanner: prueba13, thumbBanner: weeklys, link: "/store/dofus/mounts"},
         ],
         products: [
           {

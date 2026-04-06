@@ -1,4 +1,4 @@
-import { useParams } from "react-router-dom";
+import { useParams, useNavigate } from "react-router-dom";
 import { useCurrentGame } from "../";
 import { HeroThumbnails } from "./";
 import type { Category } from "../../../shared";
@@ -12,6 +12,8 @@ export const HeroSlider = () => {
   const currentGame = useCurrentGame();
   const categories = currentGame?.categories ?? [];
   const activeCategory: Category | undefined = categories.find((cat) => cat.path === category) || categories[0];
+
+  const navigate = useNavigate();
 
   if (!activeCategory) return null;
 
@@ -29,12 +31,18 @@ export const HeroSlider = () => {
         loop={hasMultiple}
         speed={900}
         modules={[Navigation, Autoplay]}
-        autoplay={ hasMultiple ? { delay: 3000, disableOnInteraction: false, pauseOnMouseEnter: true } : false }
+        autoplay={ hasMultiple ? { delay: 3000, disableOnInteraction: false, pauseOnMouseEnter: true } : false  }
+        preventClicks={true}
+        preventClicksPropagation={true}
         className="mySwiper"
       >
         {banners.map((banner, index) => (
-          <SwiperSlide key={index}>
-            <img src={banner.mainBanner} alt={activeCategory.name} />
+          <SwiperSlide
+            key={index}
+            onClick={() => {if (banner.link) navigate(banner.link);}}
+            style={{ cursor: banner.link ? "pointer" : "default" }}
+          >
+            <img src={banner.mainBanner} alt={`${activeCategory.name} banner`} />
           </SwiperSlide>
         ))}
       </Swiper>

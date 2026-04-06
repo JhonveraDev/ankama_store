@@ -3,6 +3,7 @@ export type GameName = "DOFUS" | "WAKFU";
 export interface Banner {
   mainBanner: string;
   thumbBanner: string;
+  link?: string;
 }
 
 export interface Product {
