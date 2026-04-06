@@ -1,22 +1,17 @@
-import { useNavigate, useParams } from "react-router-dom";
+import { useParams } from "react-router-dom";
 import { useCurrentGame } from "../";
 import { HeroThumbnails } from "./";
 import type { Category } from "../../../shared";
 
 import { Swiper, SwiperSlide } from "swiper/react";
-import { Navigation } from "swiper/modules";
+import { Navigation, Autoplay } from "swiper/modules";
 import "swiper/swiper-bundle.css";
 
 export const HeroSlider = () => {
-  const { game, category } = useParams();
-  const navigate = useNavigate();
+  const { category } = useParams();
   const currentGame = useCurrentGame();
-
   const categories = currentGame?.categories ?? [];
-
-  // 🔥 La categoría ahora depende SOLO de la URL
-  const activeCategory: Category | undefined =
-    categories.find((cat) => cat.path === category) || categories[0];
+  const activeCategory: Category | undefined = categories.find((cat) => cat.path === category) || categories[0];
 
   if (!activeCategory) return null;
 
@@ -24,14 +19,21 @@ export const HeroSlider = () => {
 
   if (!banners || banners.length === 0) return null;
 
+  const hasMultiple = banners.length > 1;
+
   return (
     <div className="hero-slider">
-      <Swiper navigation={true} modules={[Navigation]} className="mySwiper">
+      <Swiper
+        key={activeCategory.path}
+        navigation={hasMultiple}
+        loop={hasMultiple}
+        speed={900}
+        modules={[Navigation, Autoplay]}
+        autoplay={ hasMultiple ? { delay: 3000, disableOnInteraction: false, pauseOnMouseEnter: true } : false }
+        className="mySwiper"
+      >
         {banners.map((banner, index) => (
-          <SwiperSlide
-            key={index}
-            onClick={() => navigate(`/store/${game}/${activeCategory.path}`)}
-          >
+          <SwiperSlide key={index}>
             <img src={banner.mainBanner} alt={activeCategory.name} />
           </SwiperSlide>
         ))}

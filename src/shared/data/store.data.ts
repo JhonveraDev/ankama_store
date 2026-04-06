@@ -11,6 +11,7 @@ import prueba11 from "../../assets/images/banners/prueba-11.jpg";
 
 import prueba2 from "../../assets/images/banners/prueba-2.jpg";
 import prueba22 from "../../assets/images/banners/prueba-22.jpg";
+import prueba13 from "../../assets/images/banners/prueba-13.jpg";
 
 
 export const storeData: StoreData = [
@@ -24,6 +25,7 @@ export const storeData: StoreData = [
         path: "weekly-deals",
         banners: [
           { mainBanner: weekly, thumbBanner: weeklys },
+          { mainBanner: prueba13, thumbBanner: weeklys },
         ],
         products: [
           {
