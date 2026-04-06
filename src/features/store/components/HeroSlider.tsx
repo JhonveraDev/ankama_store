@@ -34,7 +34,7 @@ export const HeroSlider = () => {
         autoplay={ hasMultiple ? { delay: 3000, disableOnInteraction: false, pauseOnMouseEnter: true } : false  }
         preventClicks={true}
         preventClicksPropagation={true}
-        className="mySwiper"
+        className="swiper-container"
       >
         {banners.map((banner, index) => (
           <SwiperSlide

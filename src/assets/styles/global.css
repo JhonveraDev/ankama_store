@@ -256,3 +256,56 @@
 }
 
 /* ===== Hero Slider ===== */
+.hero-slider {
+  position: relative;
+}
+
+.hero-slider .swiper-button-next,
+.hero-slider .swiper-button-prev {
+  color: #fff;
+  height: 50px;
+  width: 50px;
+  background-color: #000;
+  border-radius: 40px;
+  opacity: .6;
+  transition: opacity .5s ease;
+}
+
+.hero-slider .swiper-button-next {
+  margin-right: 20px;
+}
+
+.hero-slider .swiper-button-prev {
+  margin-left: 20px;
+}
+
+.hero-slider:hover .swiper-button-next,
+.hero-slider:hover .swiper-button-prev {
+  opacity: 1;
+}
+
+.hero-slider .swiper-navigation-icon {
+  width: 11px !important;
+  height: 20px !important;
+}
+
+.hero-thumbnails {
+  position: absolute;
+  bottom: -50px;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 20px;
+  padding: 16.5px 60px;
+  background: white;
+  z-index: 99;
+  clip-path: polygon(6% 0%, 94% 0%, 100% 100%, 0% 100%);
+}
+
+.hero-thumbnails img {
+  border-radius: 6px;
+  height: 70px;
+  width: 100%;
+}

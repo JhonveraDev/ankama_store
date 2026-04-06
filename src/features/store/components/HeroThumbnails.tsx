@@ -22,20 +22,18 @@ export const HeroThumbnails = ({
       className="hero-thumbnails"
       onClick={(e) => e.stopPropagation()}
     >
-      {categories
-        .filter((cat) => cat.banners?.[0]?.thumbBanner)
-        .map((cat) => (
-          <button
-            key={cat.path}
-            onClick={() => handleClick(cat)}
-            className={cat.path === activeCategory.path ? "active" : ""}
-          >
-            <img
-              src={cat.banners![0].thumbBanner}
-              alt={cat.name}
-            />
-          </button>
-        ))}
+      {categories.filter((cat) => cat.banners?.[0]?.thumbBanner).map((cat) => (
+        <button
+          key={cat.path}
+          onClick={() => handleClick(cat)}
+          className={cat.path === activeCategory.path ? "active" : ""}
+        >
+          <img
+            src={cat.banners![0].thumbBanner}
+            alt={cat.name}
+          />
+        </button>
+      ))}
     </div>
   );
 };
