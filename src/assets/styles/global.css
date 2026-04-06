@@ -172,14 +172,23 @@
   margin-left: 4px;
 }
 
+.game-nav-link span {
+  font-weight: 500;
+  color: #373737;
+}
+
 .game-nav-link {
-  background-color: #03dde0;
   display: flex;
   align-items: center;
   justify-content: center;
   flex-direction: row;
   padding: 6px 12px 6px 0;
   border-radius: 10px;
+  transition: background-color 0.3s ease;
+}
+
+.game-nav-link--active {
+  background-color: #fff;
 }
 
 .game-nav-link:hover {
@@ -193,13 +202,58 @@
 }
 
 .game-nav__arrow {
-  height: 7px;
+  height: 10px;
   width: 10px;
   margin-left: 8px;
+  transform: rotate(90deg);
 }
 
+.game-nav-dropdown {
+  opacity: 0;
+  visibility: hidden;
+  transform: translateY(-6px);
+  transition: opacity 0.2s ease, transform 0.2s ease, visibility 0.2s;
+  position: absolute;
+  top: calc(100% + 16px);
+  left: 0;
+  background-color: #ffffff;
+  border-radius: 8px;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.12);
+  padding: 8px;
+  min-width: 175px;
+  list-style: none;
+  margin: 0;
+  z-index: 100;
+}
 
+.game-nav-dropdown__link {
+  display: block;
+  padding: 10px 15px;
+  color: #1a1a1a;
+  text-decoration: none;
+  font-size: 1rem;
+  font-weight: 400;
+  transition: background-color 0.15s ease;
+  border-radius: 10px;
+}
 
+.game-nav-dropdown__link:hover {
+  background-color: #ededed;
+}
+
+.game-nav-dropdown__link.active {
+  font-weight: 500;
+}
+
+.game-nav-dropdown--visible {
+  opacity: 1;
+  visibility: visible;
+  transform: translateY(0);
+}
+
+.game-nav-item {
+  position: relative;
+}
 
 
 
