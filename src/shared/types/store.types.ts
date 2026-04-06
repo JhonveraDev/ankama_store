@@ -1,14 +1,13 @@
 export type GameName = "DOFUS" | "WAKFU";
 
 export interface Banner {
-  image: string;
-  title: string;
-  subtitle: string;
+  mainBanner: string;
+  thumbBanner: string;
 }
 
 export interface Product {
   id: number;
-  slug: string; 
+  slug: string;
   name: string;
   image: string;
   price: number;
@@ -19,7 +18,7 @@ export interface Product {
 export interface Category {
   name: string;
   path: string;
-  banner: Banner;
+  banners?: Banner[];
   products: Product[];
 }
 

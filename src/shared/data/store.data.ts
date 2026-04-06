@@ -3,6 +3,16 @@ import type { StoreData } from "../types";
 import dofus from "../../assets/images/categories/nav_item_dofus.png";
 import wakfu from "../../assets/images/categories/nav_item_wakfu.png";
 
+import weekly from "../../assets/images/banners/banner_dofus_weekly_deals.jpg";
+import weeklys from "../../assets/images/banners/banner_dofus_weekly_dealss.jpg";
+
+import prueba1 from "../../assets/images/banners/prueba-1.jpg";
+import prueba11 from "../../assets/images/banners/prueba-11.jpg";
+
+import prueba2 from "../../assets/images/banners/prueba-2.jpg";
+import prueba22 from "../../assets/images/banners/prueba-22.jpg";
+
+
 export const storeData: StoreData = [
   {
     game: "DOFUS",
@@ -12,11 +22,9 @@ export const storeData: StoreData = [
       {
         name: "Weekly Deals",
         path: "weekly-deals",
-        banner: {
-          image: "/images/weekly-deals-banner.jpg",
-          title: "WEEKLY DEALS",
-          subtitle: "HANDPICKED GREAT DEALS!",
-        },
+        banners: [
+          { mainBanner: weekly, thumbBanner: weeklys },
+        ],
         products: [
           {
             id: 1,
@@ -39,11 +47,9 @@ export const storeData: StoreData = [
       {
         name: "Mounts",
         path: "mounts",
-        banner: {
-          image: "/images/dofus-mounts-banner.jpg",
-          title: "MOUNTS",
-          subtitle: "RIDE IN STYLE!",
-        },
+        banners: [
+          { mainBanner: prueba2, thumbBanner: prueba22 },
+        ],
         products: [
           {
             id: 3,
@@ -66,11 +72,9 @@ export const storeData: StoreData = [
       {
         name: "Cosmetics",
         path: "cosmetics",
-        banner: {
-          image: "/images/dofus-cosmetics-banner.jpg",
-          title: "COSMETICS",
-          subtitle: "CUSTOMIZE YOUR HERO!",
-        },
+        banners: [
+          { mainBanner: prueba1, thumbBanner: prueba11 },
+        ],
         products: [
           {
             id: 5,
@@ -87,94 +91,6 @@ export const storeData: StoreData = [
             price: 1200,
             originalPrice: 1500,
             discount: 20,
-          },
-        ],
-      },
-    ],
-  },
-  {
-    game: "WAKFU",
-    basePath: "wakfu",
-    categorieImage: wakfu,
-    categories: [
-      {
-        name: "Featured Offers",
-        path: "featured-offers",
-        banner: {
-          image: "/images/wakfu-featured-banner.jpg",
-          title: "FEATURED OFFERS",
-          subtitle: "POWER UP YOUR ADVENTURE!",
-        },
-        products: [
-          {
-            id: 1,
-            slug: "starter-booster-pack",
-            name: "Starter Booster Pack",
-            image: "/images/wakfu-booster.jpg",
-            price: 3500,
-            originalPrice: 5000,
-            discount: 30,
-          },
-          {
-            id: 2,
-            slug: "mount-skin-celestial-dragoturkey",
-            name: "Mount Skin: Celestial Dragoturkey",
-            image: "/images/wakfu-mount.jpg",
-            price: 1800,
-          },
-        ],
-      },
-      {
-        name: "Pets",
-        path: "pets",
-        banner: {
-          image: "/images/wakfu-pets-banner.jpg",
-          title: "PETS",
-          subtitle: "LOYAL COMPANIONS!",
-        },
-        products: [
-          {
-            id: 3,
-            slug: "baby-gobball",
-            name: "Baby Gobball",
-            image: "/images/wakfu-pet1.jpg",
-            price: 900,
-          },
-          {
-            id: 4,
-            slug: "mini-tofu",
-            name: "Mini Tofu",
-            image: "/images/wakfu-pet2.jpg",
-            price: 1100,
-            originalPrice: 1400,
-            discount: 20,
-          },
-        ],
-      },
-      {
-        name: "Costumes",
-        path: "costumes",
-        banner: {
-          image: "/images/wakfu-costumes-banner.jpg",
-          title: "COSTUMES",
-          subtitle: "STYLE YOUR CHARACTER!",
-        },
-        products: [
-          {
-            id: 5,
-            slug: "shadow-assassin-outfit",
-            name: "Shadow Assassin Outfit",
-            image: "/images/wakfu-costume1.jpg",
-            price: 2500,
-          },
-          {
-            id: 6,
-            slug: "celestial-robe",
-            name: "Celestial Robe",
-            image: "/images/wakfu-costume2.jpg",
-            price: 3000,
-            originalPrice: 3800,
-            discount: 21,
           },
         ],
       },

@@ -37,8 +37,8 @@ body {
 
 html,
 body {
-  overflow: hidden;
-  scrollbar-width: none;
+  /* overflow: hidden;
+  scrollbar-width: none; */
 }
 
 /* Remove list styles */

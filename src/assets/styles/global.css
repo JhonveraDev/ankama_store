@@ -255,40 +255,4 @@
   position: relative;
 }
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-.Store-page {
-  background-color: blueviolet;
-}
-
-.hero-slider {
-  background-color: greenyellow;
-}
-
-.grid {
-  display: flex;
-}
-
-.footer {
-  background-color: rebeccapurple;
-}
-
-.recent-products {
-  background-color: yellow;
-}
+/* ===== Hero Slider ===== */
