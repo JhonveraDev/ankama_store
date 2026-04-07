@@ -1,6 +1,7 @@
 import { useParams, useSearchParams, Link } from "react-router-dom";
 import { useCurrentGame } from "../";
 import { searchProducts } from "../../../features";
+import { motion, AnimatePresence } from "framer-motion";
 
 export const ProductGrid = () => {
   const { game, category } = useParams();
@@ -20,7 +21,15 @@ export const ProductGrid = () => {
   }
 
   return (
-    <div className="product-grid">
+  <AnimatePresence mode="wait">
+    <motion.div
+      key={`${category || ""}-${search || ""}`}
+      className="product-grid" // 🔥 AQUÍ va el grid
+      initial={{ opacity: 0 }}
+      animate={{ opacity: 1 }}
+      exit={{ opacity: 0 }}
+      transition={{ duration: 0.2 }}
+    >
       {products.length === 0 ? (
         <p className="product-grid__empty">No results found</p>
       ) : (
@@ -47,6 +56,7 @@ export const ProductGrid = () => {
           </Link>
         ))
       )}
-    </div>
-  );
+    </motion.div>
+  </AnimatePresence>
+);
 };
