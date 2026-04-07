@@ -356,12 +356,46 @@
 
 /* ===== Sidebar ===== */
 .sidebar {
-  background-color: rebeccapurple;
+  background-color: wheat;
   display: flex;
   flex-direction: column;
-  justify-content: center;
-  align-items: start;
   width: 16.66666667%;
+}
+
+.sidebar__link {
+  color: red;
+  border-bottom: 1px solid #99958f;
+  list-style: none;
+  padding: 10px 0 0;
+}
+
+.sidebar__link span {
+  color: #272624;
+  display: block;
+  font-size: 1rem;
+  text-decoration: none;
+  text-transform: uppercase;
+  margin-bottom: 10px;
+}
+
+.sidebar__link--active span {
+  color: #000;
+  font-weight: 700;
+}
+
+.sidebar__dot {
+  display: flex;
+  align-items: center;
+  justify-content: start;
+}
+
+.sidebar__dot h2 {
+  font-size: 1.5rem;
+  line-height: 1.5rem;
+  color: #41403d;
+  text-transform: uppercase;
+  margin-left: 10px;
+  font-weight: 800;
 }
 
 /* ===== Product Grid ===== */
@@ -413,9 +447,9 @@
   font-weight: 500;
 }
 
-.product-card__price p{
+.product-card__price p {
   margin-right: 12px;
-} 
+}
 
 .product-card:hover .product-card__price {
   background-color: #000;
