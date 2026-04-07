@@ -182,7 +182,7 @@
   align-items: center;
   justify-content: center;
   flex-direction: row;
-  padding: 6px 12px 6px 0;
+  padding: 6px 12px 6px 6px;
   border-radius: 10px;
   transition: background-color 0.3s ease;
 }
@@ -197,7 +197,7 @@
 
 .game-nav__icon {
   height: 40px;
-  margin-right: 6px;
+  margin-right: 3px;
   width: 40px;
 }
 
@@ -343,4 +343,80 @@
   border-radius: 6px;
   height: 70px;
   width: 100%;
+}
+
+/* ===== Store Layout ===== */
+.store-layout {
+  background-color: red;
+  margin-top: 84px;
+  display: flex;
+  flex-direction: row;
+  padding: 0 11.5%;
+}
+
+/* ===== Sidebar ===== */
+.sidebar {
+  background-color: rebeccapurple;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: start;
+  width: 16.66666667%;
+}
+
+/* ===== Product Grid ===== */
+.product-grid {
+  background-color: #03dde0;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 25px;
+  margin-left: 50px;
+  width: 83.33333333%;
+  margin-top: 50px;
+}
+
+.product-card {
+  border-radius: 20px;
+  overflow: hidden;
+}
+
+.product-card__name {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: start;
+  padding: 0 0 8px;
+  background-color: #f2f2f2;
+}
+
+.product-card__name img {
+  width: 60px;
+  height: auto;
+}
+
+.product-card__name h3 {
+  font-weight: 500;
+  color: #121212;
+  line-height: 1.25rem;
+  padding-right: 10px;
+  margin-top: 2px;
+}
+
+.product-card__price {
+  padding: 12px 0;
+  background-color: #41403d;
+  transition: background-color 0.25s ease;
+  color: #fff;
+  font-size: 1.12rem;
+  line-height: 1.12rem;
+  text-align: right;
+  font-weight: 500;
+}
+
+.product-card__price p{
+  margin-right: 12px;
+} 
+
+.product-card:hover .product-card__price {
+  background-color: #000;
 }
