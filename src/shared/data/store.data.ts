@@ -5,6 +5,7 @@ import wakfu from "../../assets/images/categories/nav_item_wakfu.png";
 
 import weekly from "../../assets/images/banners/banner_dofus_weekly_deals.jpg";
 import weeklys from "../../assets/images/banners/banner_dofus_weekly_dealss.jpg";
+import weeklyss from "../../assets/images/banners/weeklyss.jpg";
 
 import prueba1 from "../../assets/images/banners/prueba-1.jpg";
 import prueba11 from "../../assets/images/banners/prueba-11.jpg";
@@ -27,7 +28,7 @@ export const storeData: StoreData = [
         path: "weekly-deals",
         banners: [
           { mainBanner: weekly, thumbBanner: weeklys, link: "/store/dofus/weekly-deals" },
-          { mainBanner: prueba13, thumbBanner: weeklys, link: "/store/dofus/mounts" },
+          { mainBanner: prueba13, thumbBanner: weeklyss, link: "/store/dofus/mounts" },
         ],
         products: [
           {

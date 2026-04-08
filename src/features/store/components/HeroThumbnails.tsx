@@ -2,36 +2,25 @@ import { useNavigate, useParams } from "react-router-dom";
 import type { Category } from "../../../shared";
 
 interface HeroThumbnailsProps {
-  categories: Category[];
   activeCategory: Category;
+  activeIndex: number;
+  onThumbClick: (index: number) => void;
 }
 
-export const HeroThumbnails = ({
-  categories,
-  activeCategory,
-}: HeroThumbnailsProps) => {
-  const { game } = useParams();
-  const navigate = useNavigate();
+export const HeroThumbnails = ({ activeCategory, activeIndex, onThumbClick }: HeroThumbnailsProps) => {
+  const thumbnails = activeCategory.banners?.filter(b => b.thumbBanner) ?? [];
 
-  const handleClick = (cat: Category) => {
-    navigate(`/store/${game}/${cat.path}`);
-  };
+  if (thumbnails.length === 0) return null;
 
   return (
-    <div
-      className="hero-thumbnails"
-      onClick={(e) => e.stopPropagation()}
-    >
-      {categories.filter((cat) => cat.banners?.[0]?.thumbBanner).map((cat) => (
+    <div className="hero-thumbnails" onClick={(e) => e.stopPropagation()}>
+      {thumbnails.map((banner, index) => (
         <button
-          key={cat.path}
-          onClick={() => handleClick(cat)}
-          className={cat.path === activeCategory.path ? "active" : ""}
+          key={index}
+          onClick={() => onThumbClick(index)}
+          className={index === activeIndex ? "active" : ""}
         >
-          <img
-            src={cat.banners![0].thumbBanner}
-            alt={cat.name}
-          />
+          <img src={banner.thumbBanner!} alt={`${activeCategory.name} ${index + 1}`} />
         </button>
       ))}
     </div>

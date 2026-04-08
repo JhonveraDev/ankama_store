@@ -21,42 +21,42 @@ export const ProductGrid = () => {
   }
 
   return (
-  <AnimatePresence mode="wait">
-    <motion.div
-      key={`${category || ""}-${search || ""}`}
-      className="product-grid" // 🔥 AQUÍ va el grid
-      initial={{ opacity: 0 }}
-      animate={{ opacity: 1 }}
-      exit={{ opacity: 0 }}
-      transition={{ duration: 0.2 }}
-    >
-      {products.length === 0 ? (
-        <p className="product-grid__empty">No results found</p>
-      ) : (
-        products.map(product => (
-          <Link
-            to={`/store/${game}/${category}/${product.slug}`}
-            key={product.id}
-            className="product-grid__link"
-          >
-            <article className="product-card">
-              <img
-                className="product-card__image"
-                src={product.image}
-                alt={product.name}
-              />
-              <div className="product-card__name">
-                <img src={categorieImage} alt={currentGame?.game} />
-                <h3>{product.name}</h3>
-              </div>
-              <div className="product-card__price">
-                <p>${product.price}</p>
-              </div>
-            </article>
-          </Link>
-        ))
-      )}
-    </motion.div>
-  </AnimatePresence>
-);
+    <AnimatePresence mode="wait">
+      <motion.div
+        key={`${category || ""}-${search || ""}`}
+        className="product-grid"
+        initial={{ opacity: 0, scale: 0.98, filter: "blur(4px)" }}
+        animate={{ opacity: 1, scale: 1, filter: "blur(0px)" }}
+        exit={{ opacity: 0, scale: 0.98, filter: "blur(4px)" }}
+        transition={{ duration: 0.3, ease: "easeInOut" }}
+      >
+        {products.length === 0 ? (
+          <p className="product-grid__empty">No results found</p>
+        ) : (
+          products.map(product => (
+            <Link
+              to={`/store/${game}/${category}/${product.slug}`}
+              key={product.id}
+              className="product-grid__link"
+            >
+              <article className="product-card">
+                <img
+                  className="product-card__image"
+                  src={product.image}
+                  alt={product.name}
+                />
+                <div className="product-card__name">
+                  <img src={categorieImage} alt={currentGame?.game} />
+                  <h3>{product.name}</h3>
+                </div>
+                <div className="product-card__price">
+                  <p>${product.price}</p>
+                </div>
+              </article>
+            </Link>
+          ))
+        )}
+      </motion.div>
+    </AnimatePresence>
+  );
 };

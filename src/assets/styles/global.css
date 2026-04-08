@@ -347,7 +347,6 @@
 
 /* ===== Store Layout ===== */
 .store-layout {
-  background-color: red;
   margin-top: 84px;
   display: flex;
   flex-direction: row;
@@ -356,14 +355,12 @@
 
 /* ===== Sidebar ===== */
 .sidebar {
-  background-color: wheat;
   display: flex;
   flex-direction: column;
   width: 16.66666667%;
 }
 
 .sidebar__link {
-  color: red;
   border-bottom: 1px solid #99958f;
   list-style: none;
   padding: 10px 0 0;
@@ -400,7 +397,6 @@
 
 /* ===== Product Grid ===== */
 .product-grid {
-  background-color: #03dde0;
   display: grid;
   grid-template-columns: repeat(4, 1fr);
   gap: 25px;
