@@ -22,14 +22,7 @@ export const ProductGrid = () => {
 
   return (
     <AnimatePresence mode="wait">
-      <motion.div
-        key={`${category || ""}-${search || ""}`}
-        className="product-grid"
-        initial={{ opacity: 0, scale: 0.98, filter: "blur(4px)" }}
-        animate={{ opacity: 1, scale: 1, filter: "blur(0px)" }}
-        exit={{ opacity: 0, scale: 0.98, filter: "blur(4px)" }}
-        transition={{ duration: 0.3, ease: "easeInOut" }}
-      >
+      <motion.div className="product-grid" >
         {products.length === 0 ? (
           <p className="product-grid__empty">No results found</p>
         ) : (

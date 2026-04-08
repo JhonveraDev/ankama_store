@@ -18,7 +18,8 @@ export function CategorySidebar() {
       </div>
 
       <div className="sidebar__total-items">
-        <p>{currentCategory?.products.length} ITEMS</p>
+        <p>{currentCategory?.products.length}</p>
+        <span>ITEMS</span>
       </div>
 
       {currentGame.categories.map(cat => (
