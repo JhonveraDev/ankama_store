@@ -471,3 +471,25 @@
 .product-card:hover .product-card__price {
   background-color: #000;
 }
+
+/* ===== Recent Products ===== */
+.recent-products {
+  background-image: linear-gradient(180deg, hsla(0, 0%, 100%, .5) 0, #efefee), url(../images/global/recent_view_product.svg);
+  background-position: 0 0;
+  background-repeat: repeat;
+  position: relative;
+  z-index: 2;
+  padding: 0 11.5%;
+  margin-top: 50px;
+  padding-top: 100px;
+}
+
+.recent-products__grid {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 30px;
+}
+
+.recent-products h2 {
+  margin-bottom: 20px;
+}

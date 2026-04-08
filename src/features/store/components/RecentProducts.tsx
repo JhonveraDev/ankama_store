@@ -1,4 +1,3 @@
-// RecentProducts.tsx
 import { Link } from "react-router-dom";
 import { useRecentProducts } from "../";
 
@@ -10,7 +9,7 @@ export const RecentProducts = () => {
   return (
     <div className="recent-products">
       <h2>Recently Viewed</h2>
-      <div className="grid">
+      <div className="recent-products__grid">
         {products.map(product => (
           <Link
             key={product!.slug}
