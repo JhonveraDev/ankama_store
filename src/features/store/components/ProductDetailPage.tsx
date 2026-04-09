@@ -2,11 +2,13 @@ import { useEffect } from "react";
 import { useParams, useNavigate, Navigate } from "react-router-dom";
 import { useCurrentGame } from "../";
 import { addRecentProduct } from "../hooks/useRecentProducts";
+import cart from "../../../assets/images/global/shop_cart.svg";
 
 export const ProductDetailPage = () => {
   const { game, category, slug } = useParams();
   const navigate = useNavigate();
   const currentGame = useCurrentGame();
+  const categorieImage = currentGame?.categorieImage;
 
   const currentCategory = currentGame?.categories.find(c => c.path === category);
   const product = currentCategory?.products.find(p => p.slug === slug);
@@ -21,14 +23,30 @@ export const ProductDetailPage = () => {
 
   return (
     <div className="product-detail">
-      <button onClick={() => navigate(-1)}>← Back</button>
-      <img src={product.image} alt={product.name} />
-      <div>
-        <h1>{product.name}</h1>
-        {product.originalPrice && <p className="old-price">${product.originalPrice}</p>}
-        <p className="price">${product.price}</p>
-        {product.discount && <p className="discount">-{product.discount}%</p>}
+      <img src={product.thumbImage} alt={product.name} />
+
+      <div className="product-detail__info">
+        <div className="product-detail__info-top">
+          <img src={categorieImage} alt={currentGame?.game} />
+          <h1>{product.name}</h1>
+        </div>
+
+        <div className="product-detail__pricing">
+          <p className="product-detail__price">
+            {new Intl.NumberFormat('en-US', {
+              style: 'currency',
+              currency: 'COP',
+            }).format(product.price)}
+          </p>
+        </div>
+
+        <div className="product-detail__buy">
+          <button>
+            BUY
+          </button>
+        </div>
       </div>
+
     </div>
   );
 };

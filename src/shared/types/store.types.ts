@@ -11,6 +11,7 @@ export interface Product {
   slug: string;
   name: string;
   image: string;
+  thumbImage: string;
   price: number;
   originalPrice?: number;
   discount?: number;
